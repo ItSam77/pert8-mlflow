@@ -43,7 +43,8 @@ Download the dataset from the source link and extract it to the `img` folder:
 - **Note:** Make sure to download the dataset and put it in the `img` folder
 
 ### 5. Prepare the Data
-Run the Jupyter notebook to split the data into train, test, and validation sets.
+Run the Jupyter notebook to split the data into train, test, and validation sets. \
+<br>
 **Note:** Make sure to set your kernel to the virtual environment version.
 
 ### 6. Start MLflow UI
