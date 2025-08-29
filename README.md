@@ -54,6 +54,8 @@ mlflow ui
 ```
 The UI will be available at http://localhost:5000
 
+**Note:** This will execute as a background process, so you need to keep the terminal open and create a new terminal for training the models. Make sure the new terminal is also in the virtual environment.
+
 ### 7. Train the Models
 Run the modeling script to train both models (with and without fine-tuning):
 ```bash
