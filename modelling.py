@@ -61,13 +61,9 @@ def augmentation():
 
 def model_without_finetuning():
     with mlflow.start_run(run_name="No_Finetuning"):
-        # Load pre-trained MobileNetV2 as feature extractor
-        base_model = MobileNetV2(weights="imagenet", include_top=False, input_shape=(224, 224, 3))
-        base_model.trainable = False  # Freeze the base model
         
         # Build model architecture with better regularization
         model = Sequential([
-            base_model,
             GlobalAveragePooling2D(),
             Dropout(0.5),
             Dense(256, activation='relu'),
@@ -87,7 +83,7 @@ def model_without_finetuning():
         train_gen, val_gen, test_gen = augmentation()
         
         # Log model parameters
-        mlflow.log_param("base_model", "MobileNetV2_frozen")
+        mlflow.log_param("base_model", "No_Finetuning")
         mlflow.log_param("trainable_layers", "None (frozen)")
         mlflow.log_param("optimizer", "Adam")
         mlflow.log_param("learning_rate", 0.001)
